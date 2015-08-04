@@ -1,0 +1,14 @@
+from xml.dom.minidom import parse
+import xml.dom.minidom
+# Open XML document using minidom parser
+e_data = xml.dom.minidom.parse("employees_data.xml")
+
+#Get the employees data
+collection = e_data.documentElement
+
+if collection.hasAttribute("data"):
+    print "Root element : %s" % collection.getAttribute("build")
+crib_root = collection.getElementsByTagName("crib_root")
+
+for crib in crib_root:
+   print "*****crib*****"
